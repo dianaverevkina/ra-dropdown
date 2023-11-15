@@ -1,0 +1,29 @@
+.dropdown__item {
+  z-index: 1;
+  position: relative;
+  background: #FFFFFF;
+  padding: 0 1.25rem;
+  color: #666;
+}
+
+.dropdown__item_active {
+  color: #5380F7;
+}
+
+.dropdown__item-btn {
+  display: block;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1rem 0;
+  color: inherit;
+  font-size: 0.875rem;
+  text-decoration: none;
+  background-color: transparent;
+  outline: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.dropdown__item:last-child .dropdown__item-btn {
+  border-bottom: 0;
+}

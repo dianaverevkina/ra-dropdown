@@ -8,11 +8,15 @@ const listItems = [
 
 export const Dropdown = () => {
   const [dropdownList, setDropdownList] = useState(false);
+  const [selected, setSelectedItem] = useState('');
 
   function handleShowList() {
     setDropdownList(!dropdownList);
   }
-
+  
+  function handleHighlightItem(e) {
+    setSelectedItem(e.target.textContent);
+  }
 
   return (
     <div className="dropdown">
@@ -21,7 +25,11 @@ export const Dropdown = () => {
           <span>Account Settings</span>
           <i class="material-icons">public</i>
         </button>
-        {dropdownList && <DropDownList list={listItems}/>}
+        {dropdownList && <DropDownList 
+          list={listItems} 
+          selectedItem={selected} 
+          onSelect={handleHighlightItem}
+        />}
       </div>
    </div>
   )
